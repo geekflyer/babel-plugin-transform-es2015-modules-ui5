@@ -1,0 +1,4 @@
+--colors
+--inline-diffs
+--compilers js:babel-register
+./test/index.js
