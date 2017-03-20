@@ -7,7 +7,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
-    "build": "babel src/index.js --out-file lib/index.js"
+    "build": "babel src/index.js --out-file lib/index.js",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
