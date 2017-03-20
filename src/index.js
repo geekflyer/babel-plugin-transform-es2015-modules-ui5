@@ -25,10 +25,13 @@ export default function ({ types: t }) {
     return true;
   }
 
-  const amdVisitor = {
+  const ui5Visitor = {
     MemberExpression(path) {
       // check whether module has default and/or named exports
       const node = path.node;
+      if (t.isMemberExpression(node.object) && /* node.object.object === 'sap' /* && node.object.property.name === 'ui' && */node.property.name === 'define'){
+        this.isAlreadyUI5Module = true;
+      }
       if (node.object.name === 'exports' && node.property.name === 'default')
       {
         this.hasDefaultExport = true;
@@ -81,7 +84,11 @@ export default function ({ types: t }) {
           if (this.ran) return;
           this.ran = true;
 
-          path.traverse(amdVisitor, this);
+          path.traverse(ui5Visitor, this);
+
+          if (this.isAlreadyUI5Module) {
+            return;
+          }
 
           if (this.hasDefaultExport && this.anyNamedExport) {
             throw path.buildCodeFrameError(`
