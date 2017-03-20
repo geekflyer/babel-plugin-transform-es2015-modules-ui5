@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/geekflyer/babel-plugin-transform-es2015-modules-ui5.svg?branch=master)](https://travis-ci.org/geekflyer/babel-plugin-transform-es2015-modules-ui5)
+
 babel-plugin-transform-es2015-modules-ui5
 =========================================
 
