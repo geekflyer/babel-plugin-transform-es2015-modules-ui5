@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-es2015-modules-ui5",
-  "version": "6.0.0-alpha.1",
+  "version": "6.0.0-alpha.2",
   "description": "A babel plugin to transform ES6 / ES2015 modules to the UI5 module system (sap.ui.define)",
   "repository": "https://github.com/geekflyer/babel-plugin-transform-es2015-modules-ui5",
   "license": "MIT",
