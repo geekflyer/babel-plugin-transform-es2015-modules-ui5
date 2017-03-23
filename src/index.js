@@ -29,7 +29,7 @@ export default function ({ types: t }) {
     MemberExpression(path) {
       // check whether module has default and/or named exports
       const node = path.node;
-      if (t.isMemberExpression(node.object) && /* node.object.object === 'sap' /* && node.object.property.name === 'ui' && */node.property.name === 'define'){
+      if (t.isMemberExpression(node.object) && node.object.object.name === 'sap' && node.object.property.name === 'ui' && node.property.name === 'define'){
         this.isAlreadyUI5Module = true;
       }
       if (node.object.name === 'exports' && node.property.name === 'default')
