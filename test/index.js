@@ -27,7 +27,7 @@ describe('all', function () {
     const expected = fs.readFileSync(dir + '/expected.js', {encoding: 'utf8'});
 
     it(`fixture: ${dir}`, function () {
-      expect(transpile(source)).to.equalIgnoreSpaces(expected);
+      expect(transpile(source)).to.equal(expected);
     });
   });
 

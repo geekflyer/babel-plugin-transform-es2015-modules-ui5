@@ -1,6 +1,6 @@
-import foo from 'bar';
-import mylib from 'mylib';
+const foo = require('foo');
+const mylib = require('mylib');
 
 foo.blub();
 
-export default 42;
+exports.default = 42;
